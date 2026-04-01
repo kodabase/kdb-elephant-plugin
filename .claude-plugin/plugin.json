@@ -5,6 +5,6 @@
   "author": {
     "name": "Marcelo"
   },
-  "repository": "https://github.com/marcelo/claude-elephant",
+  "repository": "https://github.com/kodabase/kdb-elephant-plugin",
   "keywords": ["standards", "rfc", "validation", "compliance", "rag"]
 }

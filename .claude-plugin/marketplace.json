@@ -1,0 +1,16 @@
+{
+  "name": "kodabase",
+  "owner": {
+    "name": "Kodabase"
+  },
+  "plugins": [
+    {
+      "name": "claude-elephant",
+      "source": {
+        "source": "github",
+        "repo": "kodabase/kdb-elephant-plugin"
+      },
+      "description": "Standards-aware development intelligence. Auto-validates code against RFCs and project standards."
+    }
+  ]
+}
