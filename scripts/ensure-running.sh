@@ -15,7 +15,7 @@ if curl -s -o /dev/null -w '' --connect-timeout 1 "http://127.0.0.1:37888/api/he
     RULES=$(echo "$STATS" | python3 -c "import sys,json; print(json.load(sys.stdin).get('rules_count',0))" 2>/dev/null || echo "0")
     # Output status message via JSON stdout
     cat <<EOJSON
-{"hookSpecificOutput":{"hookEventName":"SessionStart","additionalContext":"Elephant v1.0.0 ready | ${STDS} standards, ${RULES} rules loaded"}}
+{"hookSpecificOutput":{"hookEventName":"SessionStart","additionalContext":"Elephant v1.0.1 ready | ${STDS} standards, ${RULES} rules loaded"}}
 EOJSON
     exit 0
 fi
@@ -32,7 +32,7 @@ if [ -x "$ELEPHANT_BIN" ]; then
             STDS=$(echo "$STATS" | python3 -c "import sys,json; print(json.load(sys.stdin).get('standards_count',0))" 2>/dev/null || echo "0")
             RULES=$(echo "$STATS" | python3 -c "import sys,json; print(json.load(sys.stdin).get('rules_count',0))" 2>/dev/null || echo "0")
             cat <<EOJSON
-{"hookSpecificOutput":{"hookEventName":"SessionStart","additionalContext":"Elephant v1.0.0 started | ${STDS} standards, ${RULES} rules loaded"}}
+{"hookSpecificOutput":{"hookEventName":"SessionStart","additionalContext":"Elephant v1.0.1 started | ${STDS} standards, ${RULES} rules loaded"}}
 EOJSON
             exit 0
         fi
