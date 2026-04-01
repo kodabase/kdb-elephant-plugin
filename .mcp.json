@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "elephant": {
+      "command": "${CLAUDE_PLUGIN_ROOT}/bin/elephant",
+      "args": ["mcp"],
+      "env": {
+        "ELEPHANT_DATA_DIR": "~/.claude-elephant"
+      }
+    }
+  }
+}
