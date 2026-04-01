@@ -9,33 +9,54 @@ Standards-aware development intelligence for Claude Code. Auto-validates code ag
 
 ## Installation
 
-### From GitHub (recommended)
+### 1. Add the marketplace
 
-```bash
-claude plugin add kodabase/kdb-elephant-plugin
+Inside Claude Code, run:
+
+```
+/plugin marketplace add kodabase/kdb-elephant-plugin
 ```
 
-### Manual installation
+This registers the Kodabase marketplace and makes its plugins discoverable.
 
-1. Clone this repository (or copy the `plugin/` directory):
+### 2. Install the plugin
 
-```bash
-git clone https://github.com/kodabase/kdb-elephant-plugin.git
-cd kdb-elephant-plugin
+```
+/plugin install claude-elephant@kodabase
 ```
 
-2. Install as a local plugin:
+### 3. Reload plugins
 
-```bash
-claude plugin add ./
+```
+/reload-plugins
 ```
 
 ### Verify installation
 
-After installing, restart Claude Code. On session start you should see:
+On the next session start you should see:
 
 ```
 Elephant v1.0.0 ready | X standards, Y rules loaded
+```
+
+### Team auto-setup (optional)
+
+To auto-prompt collaborators to install the marketplace when they open the project, add to `.claude/settings.json`:
+
+```json
+{
+  "extraKnownMarketplaces": {
+    "kodabase": {
+      "source": {
+        "source": "github",
+        "repo": "kodabase/kdb-elephant-plugin"
+      }
+    }
+  },
+  "enabledPlugins": {
+    "claude-elephant@kodabase": true
+  }
+}
 ```
 
 ## What gets installed
@@ -70,10 +91,10 @@ An MCP server (`elephant mcp`) providing 5 tools:
 
 | Command | Description |
 |---------|-------------|
-| `/std-ingest <path>` | Import standards documents (RFCs, ADRs, guidelines) |
-| `/std-search <query>` | Search standards and rules |
-| `/std-validate [file]` | Validate code against standards |
-| `/std-report` | Generate a compliance report |
+| `/claude-elephant:std-ingest <path>` | Import standards documents (RFCs, ADRs, guidelines) |
+| `/claude-elephant:std-search <query>` | Search standards and rules |
+| `/claude-elephant:std-validate [file]` | Validate code against standards |
+| `/claude-elephant:std-report` | Generate a compliance report |
 
 ## Configuration
 
@@ -92,8 +113,11 @@ Supported formats:
 - Inline markdown metadata (`# RFC-001: Title` + `**Status**: **APPROVED**`)
 - Document types: RFC, ADR, Guideline, Spec, Pattern
 
-## Uninstall
+## Managing the plugin
 
-```bash
-claude plugin remove claude-elephant
+```
+/plugin disable claude-elephant@kodabase   # Disable without removing
+/plugin enable claude-elephant@kodabase    # Re-enable
+/plugin uninstall claude-elephant@kodabase # Remove completely
+/plugin marketplace update kodabase        # Update marketplace catalog
 ```
