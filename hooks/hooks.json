@@ -7,12 +7,14 @@
           {
             "type": "command",
             "command": "${CLAUDE_PLUGIN_ROOT}/scripts/ensure-running.sh",
-            "timeout": 15
+            "timeout": 15,
+            "statusMessage": "Starting Elephant worker..."
           },
           {
             "type": "http",
             "url": "http://127.0.0.1:37888/api/hooks/session-start",
-            "timeout": 15
+            "timeout": 15,
+            "statusMessage": "Loading standards context..."
           }
         ]
       }
@@ -24,7 +26,8 @@
           {
             "type": "http",
             "url": "http://127.0.0.1:37888/api/hooks/pre-tool-use",
-            "timeout": 5
+            "timeout": 5,
+            "statusMessage": "Checking standards compliance..."
           }
         ]
       }
@@ -48,7 +51,8 @@
           {
             "type": "http",
             "url": "http://127.0.0.1:37888/api/hooks/stop",
-            "timeout": 10
+            "timeout": 10,
+            "statusMessage": "Saving session data..."
           }
         ]
       }
