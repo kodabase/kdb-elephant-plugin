@@ -1,7 +1,7 @@
 {
   "name": "claude-elephant",
-  "version": "0.1.1",
-  "description": "Standards-aware development intelligence. Auto-validates code against RFCs and project standards.",
+  "version": "1.0.0",
+  "description": "Standards-aware development intelligence. Auto-validates code against RFCs, enforces MUST/SHOULD/MAY rules, learns project conventions, and injects relevant context per project.",
   "author": {
     "name": "Marcelo"
   },
@@ -9,8 +9,11 @@
   "keywords": [
     "standards",
     "rfc",
+    "adr",
     "validation",
     "compliance",
-    "rag"
+    "rag",
+    "conventions",
+    "project-intelligence"
   ]
 }

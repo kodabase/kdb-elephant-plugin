@@ -10,7 +10,7 @@
         "source": "github",
         "repo": "kodabase/kdb-elephant-plugin"
       },
-      "description": "Standards-aware development intelligence. Auto-validates code against RFCs and project standards."
+      "description": "Standards-aware development intelligence. Auto-validates code against RFCs, enforces MUST/SHOULD/MAY rules, learns project conventions, and injects relevant context per project."
     }
   ]
 }
