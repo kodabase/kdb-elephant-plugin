@@ -1,10 +1,16 @@
 {
   "name": "claude-elephant",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Standards-aware development intelligence. Auto-validates code against RFCs and project standards.",
   "author": {
     "name": "Marcelo"
   },
   "repository": "https://github.com/kodabase/kdb-elephant-plugin",
-  "keywords": ["standards", "rfc", "validation", "compliance", "rag"]
+  "keywords": [
+    "standards",
+    "rfc",
+    "validation",
+    "compliance",
+    "rag"
+  ]
 }
