@@ -1,6 +1,6 @@
 {
   "name": "claude-elephant",
-  "version": "1.0.1",
+  "version": "1.0.5",
   "description": "Standards-aware development intelligence. Auto-validates code against RFCs, enforces MUST/SHOULD/MAY rules, learns project conventions, and injects relevant context per project.",
   "author": {
     "name": "Marcelo"
